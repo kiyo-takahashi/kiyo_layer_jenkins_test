@@ -15,28 +15,6 @@ pipeline { // Declarative pipelineであることを宣言する
                     // sh "td -e https://api.treasuredata.co.jp wf secrets --project load_s3_jenkins_test --set "
                     sh "td -e https://api.treasuredata.co.jp wf start kiyo_layer_jenkins_test kiyo_layer_test --session now > session_attempt_exec_log.txt"
                     
-                    //script {
-                    //  def attempt_id = sh (
-                    //   script: "python3.11 get_attempt_id.py",
-                    //    //returnStatus: true
-                    //    returnStdout: true
-                    //  )
-
-                    //  echo "${attempt_id}"
-
-                      // タスクが一定以上進む間、ウェイト
-                    //  sleep(time:30, unit:"SECONDS")
-
-                    //  sh (
-                    //    script: "td -e https://api.treasuredata.co.jp wf log ${attempt_id}"
-                    //  )
-
-                    //  sh (
-                    //    script: "td -e https://api.treasuredata.co.jp wf task ${attempt_id}"
-                    //  )
-                    }
-
-                    //echo "${attempt_id}"
                     //sh "td -e https://api.treasuredata.co.jp wf log ${attempt_id}"
                 }
             }
