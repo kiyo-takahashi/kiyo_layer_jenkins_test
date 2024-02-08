@@ -9,4 +9,4 @@ _export:
   engine: presto
   store_last_results: true
 
-echo>: ${td.last_results.cnt}
+  echo>: ${td.last_results.cnt}
