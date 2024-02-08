@@ -1,0 +1,28 @@
+timezone: Asia/Tokyo
+
+_export:
+  td:
+    database: kiyo_layer0_sample_db
+
+schedule:
+  cron>: 22 5 * * *
+
++update_intermediate_table1:
+  td>: sql/kiyo_create_l1_attribute_summary.sql
+  insert_into: kiyo_layer1_sample_db.attribute_summary
+  engine: presto
+  
++update_intermediate_table2:
+  td>: sql/kiyo_create_l1_master_customer.sql
+  insert_into: kiyo_layer1_sample_db.master_customer_mask
+  engine: presto
+
++update_intermediate_table3:
+  td>: sql/kiyo_create_l1_transaction_pos_header.sql
+  insert_into: kiyo_layer1_sample_db.transaction_pos_header_cleansing
+  engine: presto
+
++update_intermediate_table4:
+  td>: sql/kiyo_create_l2_sales_summary.sql
+  insert_into: kiyo_layer2_sample_db.sales_summary_by_demographic
+  engine: presto
