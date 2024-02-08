@@ -9,4 +9,5 @@ _export:
   engine: presto
   store_last_results: true
 
++echo_result1:
   echo>: ${td.last_results.cnt}
