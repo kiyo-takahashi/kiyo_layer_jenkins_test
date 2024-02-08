@@ -1,0 +1,12 @@
+timezone: Asia/Tokyo
+
+_export:
+  td:
+    database: kiyo_layer1_sample_db
+
++test_attribute_summary1:
+  td>: test/test_not_null__l1_attribute_summary.sql
+  engine: presto
+  store_last_results: true
+
+echo>: ${td.last_results.cnt}
