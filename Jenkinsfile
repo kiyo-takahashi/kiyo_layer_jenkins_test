@@ -8,7 +8,6 @@ pipeline { // Declarative pipelineであることを宣言する
             steps {
                 echo "Building"
                 dir ('/var/jenkins_home/workspace/kiyo_layer_jenkins_test_pipeline') {
-                //dir ('/var/lib/jenkins/workspace/load_s3_jenkins_test_pipeline') {
                     sh "echo y | td -e https://api.treasuredata.co.jp wf push kiyo_layer_jenkins_test"
                     //sh "td -e https://api.treasuredata.co.jp db:create kiyo_s3_jenkins_test"
                     //sh "td -e https://api.treasuredata.co.jp table:create kiyo_s3_jenkins_test fei_city_s3"
@@ -39,15 +38,15 @@ pipeline { // Declarative pipelineであることを宣言する
                 echo "Testing"
                 dir('/var/jenkins_home/workspace/kiyo_layer_jenkins_test_pipeline') {
                     sh "td -e https://api.treasuredata.co.jp query -d kiyo_layer1_sample_db -q test/sql/test_not_null__l1_attribute_summary.sql -w -f csv -o ./test/result/test_not_null.csv -T presto"
-                    //script {
-                    //    def f = new File("./test/result/test_not_null.csv")
+                    script {
+                        def f = new File("./test/result/test_not_null.csv")
                     //
                     //    line_count = f.readLines().size
                     //
                         //if (line_count > 0) {
                         //    error 'NULL exists!'
                         //}
-                    //}
+                    }
                 }
             }
             // ステップ終了処理
