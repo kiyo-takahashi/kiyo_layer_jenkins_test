@@ -39,7 +39,7 @@ pipeline { // Declarative pipelineであることを宣言する
                 dir('/var/jenkins_home/workspace/kiyo_layer_jenkins_test_pipeline') {
                     // Not NULLテスト
                     sh "td -e https://api.treasuredata.co.jp query -d kiyo_layer1_sample_db -q test/sql/test_not_null__l1_attribute_summary.sql -w -f csv -o ./test/result/test_not_null.csv -T presto"
-                    line_count = sh (wc -l < ./test/result/test_not_null.csv)
+                    line_count = getLineCount(./test/result/test_not_null.csv)
                     //if (line_count > 0) {
                     //    error 'NULL exists!'
                     //}
@@ -78,3 +78,11 @@ pipeline { // Declarative pipelineであることを宣言する
         }
     }
 }
+
+def getLineCount(result_file){
+    sh (
+        script: "wc -l < ＄｛result_file}", 
+        returnStdout: true
+    )
+}
+
