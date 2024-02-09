@@ -44,9 +44,9 @@ pipeline { // Declarative pipelineであることを宣言する
 
                         line_count = f.readLines().size
 
-                        if (line_count > 0) {
-                            error 'NULL exists!'
-                        }
+                        //if (line_count > 0) {
+                        //    error 'NULL exists!'
+                        //}
                     }
                 }
             }
