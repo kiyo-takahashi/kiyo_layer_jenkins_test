@@ -41,6 +41,8 @@ pipeline { // Declarative pipelineであることを宣言する
                     sh "td -e https://api.treasuredata.co.jp query -d kiyo_layer1_sample_db -q test/sql/test_not_null__l1_attribute_summary.sql -w -f csv -o ./test/result/test_not_null.csv -T presto"
                     script {
                         def fileText = new File("./test/result/test_not_null.csv").getText();
+
+                        console.log(fileText);
                         
                         if (fileText != null) {
                             error 'NULL exists!'
