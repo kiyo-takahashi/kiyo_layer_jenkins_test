@@ -45,10 +45,12 @@ pipeline { // Declarative pipelineであることを宣言する
                         
                         //def line_count = file_texts.size()
                         def lines = f.readLines() 
-
                         println lines;
+
+                        def line_count = lines.size()
+                        println line_count;
                         
-                        //if (fileText != null) {
+                        //if (lines != null) {
                         //    error 'NULL exists!'
                         //}
                     }
