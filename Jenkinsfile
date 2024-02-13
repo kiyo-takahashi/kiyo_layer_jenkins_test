@@ -50,9 +50,9 @@ pipeline { // Declarative pipelineであることを宣言する
                         def line_count = lines.size()
                         println line_count;
                         
-                        //if (lines != null) {
-                        //    error 'NULL exists!'
-                        //}
+                        if (line_count > 0) {
+                            error 'NULL exists!'
+                        }
                     }
                 }
             }
