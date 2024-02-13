@@ -44,7 +44,7 @@ pipeline { // Declarative pipelineであることを宣言する
                         def f = readFile "./test/result/test_not_null.csv"   
                         
                         //def line_count = file_texts.size()
-                        def lines = filePath.readLines() 
+                        def lines = f.readLines() 
 
                         println lines;
                         
