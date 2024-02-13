@@ -42,7 +42,7 @@ pipeline { // Declarative pipelineであることを宣言する
                     script {
                         def f = new File("./test/result/test_not_null.csv")
 
-                        def line_count = f.readLines().size
+                        def line_count = f.readLines().size()
 
                         //println fileText;
                         
