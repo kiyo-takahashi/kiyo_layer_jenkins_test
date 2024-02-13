@@ -42,7 +42,7 @@ pipeline { // Declarative pipelineであることを宣言する
                     script {
                         def fileText = new File("./test/result/test_not_null.csv").text;
 
-                        println fileText;
+                        //println fileText;
                         
                         //if (fileText != null) {
                         //    error 'NULL exists!'
