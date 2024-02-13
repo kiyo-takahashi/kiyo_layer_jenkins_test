@@ -40,12 +40,13 @@ pipeline { // Declarative pipelineであることを宣言する
                     // Not NULLテスト
                     sh "td -e https://api.treasuredata.co.jp query -d kiyo_layer1_sample_db -q test/sql/test_not_null__l1_attribute_summary.sql -w -f csv -o ./test/result/test_not_null.csv -T presto"
                     script {
-                        File f = new File("./test/result/test_not_null.csv")
-                        def file_texts = f.text
+                        //File f = new File("./test/result/test_not_null.csv")
+                        def f = readFile "./test/result/test_not_null.csv"   
                         
                         //def line_count = file_texts.size()
+                        def lines = filePath.readLines() 
 
-                        println file_texts;
+                        println lines;
                         
                         //if (fileText != null) {
                         //    error 'NULL exists!'
