@@ -36,6 +36,7 @@ pipeline { // Declarative pipelineであることを宣言する
 
                       def wf_status = True
                       while (wf_status = True) {
+                          echo "judge wf status"
                           wf_status = sh (
                             script: "python3.11 get_task_status_end.py",
                             returnStdout: true
