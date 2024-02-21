@@ -12,7 +12,7 @@ pipeline { // Declarative pipelineであることを宣言する
                     //sh "td -e https://api.treasuredata.co.jp db:create kiyo_s3_jenkins_test"
                     //sh "td -e https://api.treasuredata.co.jp table:create kiyo_s3_jenkins_test fei_city_s3"
                     // sh "td -e https://api.treasuredata.co.jp wf secrets --project load_s3_jenkins_test --set "
-                    sh "td -e https://api.treasuredata.co.jp wf start kiyo_layer_jenkins_test kiyo_layer_test --session now &> session_attempt_exec_log.txt"
+                    sh "td -e https://api.treasuredata.co.jp wf start kiyo_layer_jenkins_test kiyo_layer_test --session now > session_attempt_exec_log.txt"
                     
                     script {
                       def attempt_id = sh (
