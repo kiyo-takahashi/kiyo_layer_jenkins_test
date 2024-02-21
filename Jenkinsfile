@@ -46,7 +46,7 @@ pipeline { // Declarative pipelineであることを宣言する
                         wf_status = sh (
                             script: "python3.11 get_task_status_end.py",
                             returnStdout: true
-                        )
+                        ).trim()
 
                         echo "${wf_status}"
                         sleep(time:10, unit:"SECONDS")
