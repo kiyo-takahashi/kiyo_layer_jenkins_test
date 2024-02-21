@@ -12,11 +12,12 @@ with open(file_path) as f:
 
 #print(lines)
 
-# endならTrue
-#wf_status = ['state: planned' in lines or 'state: blocked' in lines or 'state: running' in lines or 'state: ready' in lines or 'state: retry_waiting' in lines]
-tasks_in_progress = [line for line in lines if 'state: planned' in line]
+# 実行中のステータスが検出されたら、tasks_in_progressリストに該当行を出力
+tasks_in_progress = [line for line in lines if 'state: planned' in line or 'state: blocked' in line or 'state: running' in line or 'state: ready' in line or 'state: retry_waiting' in line]
+#print(tasks_in_progress)
 
-if len(tasks_in_progress) != 0:
+# tasks_in_progressリストの長さが0なら、実行中タスクが無いと判断しEndとする
+if len(tasks_in_progress) == 0:
     wf_status = "End"
 else:
     wf_status = "Running"
