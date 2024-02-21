@@ -50,7 +50,7 @@ pipeline { // Declarative pipelineであることを宣言する
                         echo "${wf_status}"
                         sleep(time:10, unit:"SECONDS")
 
-                        if (wf_status == "End") {
+                        if (wf_status == 'End') {
                                 break;
                         }
                       }
