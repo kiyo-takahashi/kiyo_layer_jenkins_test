@@ -31,7 +31,7 @@ pipeline { // Declarative pipelineであることを宣言する
                       )
 
                       def wf_status = "Running"
-                      while (wf_status == "Running") {
+                      while (wf_status = "Running") {
 
                         def tasks_status_log = sh (
                           script: "td -e https://api.treasuredata.co.jp wf task ${attempt_id}",
