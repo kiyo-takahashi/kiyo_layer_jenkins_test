@@ -36,7 +36,7 @@ pipeline { // Declarative pipelineであることを宣言する
 
                       def wf_status = "True"
                     
-                      while ($wf_status == "True") {
+                      while (wf_status == "True") {
                         echo "judge wf status"
                         
                         wf_status = sh (
