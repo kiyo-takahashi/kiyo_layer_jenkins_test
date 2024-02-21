@@ -38,9 +38,7 @@ pipeline { // Declarative pipelineであることを宣言する
                           returnStdout: true
                         )
 
-                        sh (
-                          script: "echo ${tasks_status_log}"
-                        )
+                        "echo ${tasks_status_log} > tasks_status_log.txt"
 
                         echo "judge wf status"
                         
