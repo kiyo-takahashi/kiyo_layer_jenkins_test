@@ -30,13 +30,13 @@ pipeline { // Declarative pipelineであることを宣言する
                         script: "td -e https://api.treasuredata.co.jp wf log ${attempt_id}"
                       )
 
-                      sh (
-                        script: "td -e https://api.treasuredata.co.jp wf task ${attempt_id} > tasks_status_log.txt"
-                      )
-
                       def wf_status = "Start"
-                    
                       while (wf_status != "End") {
+
+                        sh (
+                          script: "td -e https://api.treasuredata.co.jp wf task ${attempt_id} > tasks_status_log.txt"
+                        )
+
                         echo "judge wf status"
                         
                         wf_status = sh (
