@@ -44,8 +44,7 @@ pipeline { // Declarative pipelineであることを宣言する
                             returnStdout: true
                         )
 
-                        echo "Sleeping for 60 seconds..."
-                        sleep(time:20, unit:"SECONDS")
+                        sleep(time:5, unit:"SECONDS")
                       }
                     }
                 }
