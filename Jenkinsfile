@@ -34,7 +34,7 @@ pipeline { // Declarative pipelineであることを宣言する
                       while (wf_status == "Running") {
 
                         sh (
-                          script: "td -e https://api.treasuredata.co.jp wf task ${attempt_id} > tasks_status_log.txt"
+                          script: "td -e https://api.treasuredata.co.jp wf task ${attempt_id}" > tasks_status_log.txt
                         )
 
                         echo "judge wf status"
@@ -45,7 +45,7 @@ pipeline { // Declarative pipelineであることを宣言する
                         )
 
                         echo "${wf_status}"
-                        sleep(time:1, unit:"SECONDS")
+                        sleep(time:10, unit:"SECONDS")
                       }
                     }
                 }
