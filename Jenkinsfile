@@ -38,7 +38,7 @@ pipeline { // Declarative pipelineであることを宣言する
                           returnStdout: true
                         )
 
-                        "echo ${tasks_status_log} > tasks_status_log.txt"
+                        new File("tasks_status_log.txt").text = tasks_status_log
 
                         echo "judge wf status"
                         
