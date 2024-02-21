@@ -31,7 +31,7 @@ pipeline { // Declarative pipelineであることを宣言する
                       )
 
                       sh (
-                        script: "td -e https://api.treasuredata.co.jp wf task ${attempt_id}" > tasks_status_log.txt
+                        script: "td -e https://api.treasuredata.co.jp wf task ${attempt_id} > tasks_status_log.txt"
                       )
 
                       def wf_status = True
