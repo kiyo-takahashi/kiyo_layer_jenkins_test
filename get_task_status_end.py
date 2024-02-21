@@ -18,7 +18,7 @@ tasks_in_progress = [line for line in lines if 'state: planned' in line]
 
 if len(tasks_in_progress) != 0:
     wf_status = "End"
-else
+else:
     wf_status = "Running"
 
 print(wf_status)
