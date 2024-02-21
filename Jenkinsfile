@@ -39,7 +39,7 @@ pipeline { // Declarative pipelineであることを宣言する
                         )
 
                         sh (
-                          script: "echo ${tasks_status_log} | tee tasks_status_log.txt"
+                          script: "echo ${tasks_status_log} > tasks_status_log.txt"
                         )
 
                         echo "judge wf status"
