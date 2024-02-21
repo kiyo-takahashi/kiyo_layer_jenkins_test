@@ -37,7 +37,7 @@ pipeline { // Declarative pipelineであることを宣言する
                       def wf_status = True
                     
                     
-                      while ($wf_status == True) {
+                      //while ($wf_status == True) {
                         echo "judge wf status"
                         
                         wf_status = sh (
@@ -47,7 +47,7 @@ pipeline { // Declarative pipelineであることを宣言する
 
                         echo "Sleeping for 60 seconds..."
                         sleep(time:60, unit:"SECONDS")
-                      }
+                      //}
                     }
                 }
             }
