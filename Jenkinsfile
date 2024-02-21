@@ -44,6 +44,7 @@ pipeline { // Declarative pipelineであることを宣言する
                             returnStdout: true
                         )
 
+                        echo "${wf_status}"
                         sleep(time:5, unit:"SECONDS")
                       }
                     }
